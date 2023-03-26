@@ -1,0 +1,463 @@
+$color-primary: #1A73E7;
+$color-primary-lite: #C2DAF9;
+
+$color-secondary: #3C3F49;
+$color-secondary-lite: #8E96A5;
+$color-secondary-lite2: #616C81;
+
+$background-color: #FFFFFF;
+$background-color2: #F4F6F8;
+$border-color: #C7C7C7;
+$border2-color: #C8D2DC;
+$circle-color: #EAECEE;
+$mobile-color: #B2C0CE;
+
+.ticket {
+    display: flex;
+    max-width: 785px;
+    width: 100%;
+    margin: 10% auto;
+    background: $background-color;
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+
+    .left {
+        padding: 29px;
+        width: 100%;
+        position: relative;
+
+        .circle {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            background: $circle-color;
+            right: -8px;
+        }
+
+        .top {
+            top: -7px;
+        }
+
+        .bottom {
+            bottom: -7px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 54px;
+
+            .mobile {
+                display: none;
+            }
+
+            .ticketArea {
+                display: flex;
+                flex-direction: column;
+                gap: 22px;
+
+                .title {
+                    font-family: 'Noto Sans Georgian';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: $color-secondary;
+                }
+
+                .checkInOutArea {
+                    display: flex;
+                    gap: 7px;
+                    align-items: center;
+                    margin-top: -16px;
+
+                    .checkInOut {
+                        font-family: 'Noto Sans Georgian';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: $color-secondary-lite;
+                    }
+
+                    .logo {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 100%;
+                    }
+
+                    .passenger {
+                        font-family: 'Noto Sans Georgian';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 12px;
+                        padding: 4px 6px;
+                        background: $background-color2;
+                        border-radius: 34px;
+                        color: $color-secondary-lite2;
+                        text-align: center;
+                    }
+                }
+
+                .fly {
+                    display: flex;
+                    gap: 20px;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .columnArea {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        .flyClock {
+                            font-family: 'Noto Sans Georgian';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: $color-secondary;
+                        }
+
+                        .flyCity {
+                            font-family: 'Noto Sans Georgian';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 16px;
+                            color: $color-secondary-lite;
+                        }
+
+                        .stops {
+                            display: flex;
+                            gap: 30px;
+                        }
+
+                        .stations {
+                            display: flex;
+                            gap: 2px;
+                            position: relative;
+                            align-items: flex-end;
+
+                            .plane {
+                                margin-left: -18px;
+                                width: 25.67px;
+                                height: 20.57px;
+                            }
+
+                            .points {
+                                display: flex;
+                                gap: 2px;
+                                align-items: center;
+                                position: relative;
+                                left: -13px;
+                                justify-content: center;
+
+                                .range {
+                                    display: flex;
+                                    background: $color-primary-lite;
+                                    border-radius: 2px;
+                                    height: 3px;
+                                }
+
+                                .point {
+                                    display: flex;
+                                    width: 6.57px;
+                                    height: 6.57px;
+                                    background: $color-primary;
+                                    border: 3px solid $background-color;
+                                    border-radius: 100%;
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+
+                .totalArea {
+                    display: flex;
+                    gap: 7px;
+                    align-items: center;
+                    align-self: baseline;
+                    padding: 4px 12px;
+                    gap: 10px;
+                    border: 1px solid $border2-color;
+                    border-radius: 34px;
+
+                    .clock {
+                        width: 17.5px;
+                        height: 15px;
+                    }
+
+                    .total {
+                        font-family: 'Noto Sans Georgian';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 24px;
+                        color: $color-secondary;
+                    }
+                }
+            }
+
+            .infoArea {
+                display: flex;
+                gap: 7px;
+                height: 32px;
+
+                .info {
+                    flex-direction: row;
+                    align-items: flex-start;
+                    font-family: 'Noto Sans Georgian';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 13px;
+                    line-height: 24px;
+                    padding: 4px 12px;
+                    gap: 10px;
+                    border: 1px solid $border2-color;
+                    border-radius: 34px;
+                    color: $color-secondary-lite2;
+                }
+            }
+
+
+        }
+    }
+
+    .right {
+        padding: 29px;
+        max-width: 239px;
+        min-width: 239px;
+        border-left: 1px dashed $border-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .book {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+
+            .price {
+                font-family: 'Noto Sans Georgian';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 28px;
+                line-height: 40px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: $color-secondary;
+            }
+
+            .monthly {
+                font-family: 'Noto Sans Georgian';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 24px;
+                color: $color-primary;
+            }
+
+            .booking {
+                padding: 12px 53px;
+                gap: 10px;
+                background: $color-primary;
+                border-radius: 5px;
+                font-family: 'Noto Sans Georgian';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #FFFFFF;
+                cursor: pointer;
+            }
+        }
+
+        .detail {
+            box-sizing: border-box;
+            padding: 4px 12px;
+            background: $background-color;
+            border: 1px solid $border2-color;
+            border-radius: 4px;
+            font-family: 'Noto Sans Georgian';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 24px;
+            color: $color-secondary-lite2;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .detail:hover {
+            color: $color-primary;
+        }
+
+        .more {
+            display: none;
+            font-family: 'Noto Sans Georgian';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: $color-primary;
+            cursor: pointer;
+        }
+    }
+}
+
+$mobile-size: 784px;
+
+@media (min-width: $mobile-size) {
+    .mobile {
+        display: none !important;
+    }
+}
+
+@media (max-width: $mobile-size) {
+    .ticket {
+        flex-direction: column;
+        max-width: 330px;
+        min-width: 330px;
+
+        .left {
+            max-width: 272px;
+            min-width: 272px;
+
+            .top {
+                top: unset;
+                left: -7px;
+                bottom: -7px;
+            }
+        }
+
+        .right {
+            border-left: unset;
+            border-top: 1px dashed $border-color;
+            max-width: 272px;
+            min-width: 272px;
+            gap: 20px;
+
+            .book {
+                .price {
+                    padding: 12px 53px;
+                    gap: 10px;
+                    background: $color-primary;
+                    border-radius: 5px;
+                    font-family: "Noto Sans Georgian";
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 24px;
+                    width: 100%;
+                    color: #FFFFFF;
+                    cursor: pointer;
+                    justify-content: center;
+                }
+
+                .booking {
+                    display: none;
+                }
+            }
+
+            .detail {
+                display: none;
+            }
+
+            .more {
+                display: block;
+            }
+        }
+
+        .content {
+
+            .desktop {
+                display: none !important;
+            }
+
+            .mobile {
+                display: flex;
+            }
+
+            .ticketArea {
+                .totalArea {
+                    display: none !important;
+                }
+
+                .title {
+                    display: flex;
+                    gap: 11px;
+                    align-items: center;
+
+                    .fromto {
+                        width: 18px;
+                        height: 14px;
+                    }
+                }
+
+                .fly {
+                    .columnArea {
+                        .stations {
+                            align-items: center !important;
+
+                            .points {
+                                display: flex;
+                                gap: 2px;
+                                align-items: center;
+                                position: relative;
+                                left: 0px !important;
+                                justify-content: center;
+
+                                .plane {
+                                    margin-left: 0px;
+                                    width: 22px;
+                                    height: 17.63px;
+                                    margin-bottom: -4px;
+                                }
+
+                                .range {
+                                    display: flex;
+                                    background: $color-primary-lite;
+                                    border-radius: 2px;
+                                    height: 3px;
+                                }
+
+                                .point {
+                                    display: flex;
+                                    width: 6.57px;
+                                    height: 6.57px;
+                                    background: $color-primary;
+                                    border: 3px solid $background-color;
+                                    border-radius: 100%;
+                                }
+                            }
+
+                        }
+
+                        .stops {
+                            display: flex;
+                            justify-content: space-between;
+
+                            .flyCity {
+                                color: $mobile-color;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+
+            .infoArea {
+                display: none !important;
+            }
+        }
+    }
+}

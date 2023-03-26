@@ -1,0 +1,138 @@
+<section class="ticket">
+    <section class="left">
+        <div class="content">
+            <div class="ticketArea desktop" *ngFor="let item of ticketData.data">
+                <span class="title">
+                    {{item.day}}
+                </span>
+                <div class="checkInOutArea">
+                    <span class="checkInOut">{{item.checkInOut}}</span>
+                    <img class="logo" src="./assets/img/logo.svg">
+                    <span class="passenger">{{item.passenger}}</span>
+                </div>
+                <div class="fly">
+                    <div class="columnArea">
+                        <span class="flyClock">
+                            {{item.fly.fromClock}}
+                        </span>
+                        <span class="flyCity">
+                            {{item.fly.fromCity}}
+                        </span>
+                    </div>
+
+                    <div class="columnArea">
+                        <div class="stations">
+                            <img class="plane" src="./assets/img/plane.svg">
+
+                            <div class="points" *ngFor="let point of item.fly.stations; let ind = index">
+                                <span class="point"></span>
+                                <span class="range" *ngIf="ind != (item.fly.stations.length - 1)"
+                                    [ngStyle]="{'width': point == 1 ? '58px' : point == 2 ? '18px' : point == 3 ? '25px' : ''}"></span>
+                            </div>
+                        </div>
+                        <div class="stops">
+                            <span class="flyCity">
+                                {{item.fly.stop}} გაჩერება
+                            </span>
+                            <span class="flyCity">
+                                ჯამში: {{item.fly.total}}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="columnArea">
+                        <span class="flyClock">
+                            {{item.fly.toClock}}
+                        </span>
+                        <span class="flyCity">
+                            {{item.fly.toCity}}
+                        </span>
+                    </div>
+                </div>
+                <div class="totalArea">
+                    <img class="clock" src="./assets/img/clock.svg">
+                    <span class="total">{{item.flyTime}}</span>
+                </div>
+            </div>
+
+            <div class="ticketArea mobile" *ngFor="let item of ticketData.mobile">
+                <span class="title">
+                    <span>
+                        {{item.fly.toCity}}
+                    </span>
+
+                    <img class="fromto" src="./assets/img/fromto.svg">
+
+                    <span>
+                        {{item.fly.fromCity}}
+                    </span>
+                </span>
+
+                <div class="fly">
+                    <div class="columnArea">
+                        <div class="stations">
+
+                            <span class="flyClock">
+                                {{item.fly.fromClock}}
+                            </span>
+
+                            <div class="points" *ngFor="let point of item.fly.stations; let ind = index">
+                                <img *ngIf="ind == 1" class="plane" src="./assets/img/plane.svg">
+                                <span class="point"
+                                    [ngStyle]="{'margin-left': ind == 1 ? '-12px' : '','margin-bottom': ind == 1 ? '-10px' : ''}"></span>
+                                <span class="range" *ngIf="ind != (item.fly.stations.length - 1)"
+                                    [ngStyle]="{'width': point == 1 ? '60px' : point == 2 ? '64px' : ''}"></span>
+                            </div>
+
+                            <span class="flyClock">
+                                {{item.fly.toClock}}
+                            </span>
+                        </div>
+
+                        <div class="stops">
+                            <span class="flyCity">
+                                {{item.fly.stop}} გაჩერება
+                            </span>
+                            <span class="flyCity">
+                                ფრენა: {{item.fly.total}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="infoArea">
+                <span *ngFor="let name of ticketData.info" class="info">{{name}}</span>
+            </div>
+
+        </div>
+        <span class="circle top"></span>
+        <span class="circle bottom"></span>
+    </section>
+
+    <section class="right">
+        <span></span>
+
+        <div class="book">
+            <span class="price">
+                {{ticketData.total}}₾
+            </span>
+            <span class="monthly">
+                განვადება თვეში: {{ticketData.monthly}}₾-დან
+            </span>
+            <span class="booking">
+                დაჯავშნა
+            </span>
+        </div>
+
+        <span class="more">
+            ვრცლად
+        </span>
+
+        <span class="detail">
+            დეტალურად ნახვა
+        </span>
+
+    </section>
+</section>
